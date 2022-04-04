@@ -32,7 +32,7 @@ const BarChart = () => {
       };
       fetchData();
     }, []);
-    console.log("chart", chart);
+    //console.log("chart", chart);
     var data = {
     labels: chart?.data?.map(x => x.log_level).filter((value, index, self) => self.indexOf(value) === index) ,
     datasets: [
