@@ -4,9 +4,9 @@ import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
 let element = [];
-let info = [];
-let err = [];
-let trace = [];
+let info = 0;
+let err = 0;
+let trace = 0;
 
 const BarChart = () => {
   const [chart, setChart] = useState({});
@@ -16,13 +16,13 @@ const BarChart = () => {
             for (let i of result.data) {
               element = i.log_level;
               if (element == 'INFO') {
-                info.push(element);
+                info++;
               }
               else if (element == 'ERROR') {
-                err.push(element);
+                err++;
               }
               else if (element == 'TRACE') {
-                trace.push(element);
+                trace++;
               }
             }
             setChart(result);
@@ -41,7 +41,7 @@ const BarChart = () => {
         backgroundColor: 'rgba(75,192,192,1)',
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 2,
-        data: [info.length, err.length, trace.length]
+        data: [info, trace, err]
       }
     ]
   };
