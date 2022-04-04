@@ -23,11 +23,11 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className='col-3'>
           
         </div>
-      </div>
+      </div> */}
       <div className="row">
         <div className='col-3'> 
           <Linechart />
